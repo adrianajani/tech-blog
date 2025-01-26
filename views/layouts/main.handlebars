@@ -1,0 +1,78 @@
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>Tech Blog | Let's Get Technological</title>
+        <script src='https://cdn.tailwindcss.com'></script>
+        <script>
+            tailwind.config = { variants: { extend: { opacity:["disabled"],
+            cursor:["disabled"] } } }
+        </script>
+        <link
+            rel='stylesheet'
+            href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css'
+            integrity='sha512-...'
+            crossorigin='anonymous'
+        />
+        <link
+            href='https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css'
+            rel='stylesheet'
+        />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+            href='https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap'
+            rel='stylesheet'
+        />
+        <link
+            href='https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'
+            rel='stylesheet'
+        />
+        <link rel='stylesheet' href='/css/jass.css' />
+        <link rel='stylesheet' href='/css/style.css' />
+    </head>
+
+    <body class='bg-yellow-500 text-black'>
+        <div
+            class='flex-row justify-center items-center text-black text-2xl no-underline w-full'
+        >
+            <header class='flex justify-between bg-yellow-700 suse-font w-full border-b'>
+                <div class='flex-row p-6 ml-6 text-4xl'></div>
+                    <h1 class='mx-5'>
+                        <a href='/'>Tech Blog</a>
+                    </h1>
+                    <h1 class='mx-5'>
+                        <a href='/dashboard'>Dashboard</a>
+                    </h1>
+                </div>
+                <nav class='p-6 mr-6'>
+                    <!-- Conditionally render login or logout links -->
+                    {{#if logged_in}}
+                        <button class='no-button' id='logout'>logout</button>
+                    {{else}}
+                        <a href='/login'>login</a>
+                    {{/if}}
+                </nav>
+            </header>
+            <main class='my-5 post-list'>
+                <!-- Render the sub layout -->
+                {{{body}}}
+            </main>
+            {{!-- <footer class='flex justify-center items-center w-full h-20 bg-green-500'></footer>
+                <a
+                    href='https://github.com/adrianajani'
+                    class='flex justify-center items-center'
+                >
+                    <p class='text-xl pr-3'>github.com/adrianajani</p>
+                    <i class='fab fa-github'></i>
+                </a>
+            </footer> --}}
+        </div>
+        {{#if logged_in}}
+            <script src='/js/logout.js'></script>
+        {{/if}}
+        <script
+            src='https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js'
+        ></script>
+    </body>
+</html>
